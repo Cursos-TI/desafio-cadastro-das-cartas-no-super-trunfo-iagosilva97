@@ -13,10 +13,6 @@ int main()
     float densidade1;
     float pibPerCapita1;
     float superPoder1;
-    int pontosCarta1;
-
-    // pontos carta 01
-    pontosCarta1 = 0;
 
     // carta 02
     char estado2;
@@ -29,10 +25,6 @@ int main()
     float densidade2;
     float pibPerCapita2;
     float superPoder2;
-    int pontosCarta2;
-
-    // pontos carta 02
-    pontosCarta2 = 0;
 
     // entrada de dados carta 01
     printf("Digite os dados da primeira carta: \n");
@@ -102,136 +94,104 @@ int main()
     printf("Densidade: %f habitantes/km²\n", densidade2);
     printf("PIB per capita: %f reais\n", pibPerCapita2);
 
-    // Comparação das cartas
-    printf("\nComparação das cartas:\n");
+    int opcao;
 
-    // batalha populacao
-    if (populacao1 > populacao2)
-    {
-        pontosCarta1 += 1;
-        printf("A carta 1 venceu!\n");
-    }
-    else if (populacao1 < populacao2)
-    {
-        pontosCarta2 += 1;
-        printf("A carta 2 venceu!\n");
-    }
-    else
-    {
-        printf("As cartas são iguais em população!\n");
-    }
+    printf("\nEscolha o atributo para comparar:\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Pontos Turísticos\n");
+    printf("5 - Densidade Demográfica\n");
+    printf("Digite a opção desejada: ");
+    scanf("%d", &opcao);
 
-    // batalha area
-    if (area1 > area2)
-    {
-        pontosCarta1 += 1;
-        printf("A carta 1 venceu!\n");
-    }
-    else if (area1 < area2)
-    {
-        pontosCarta2 += 1;
-        printf("A carta 2 venceu!\n");
-    }
-    else
-    {
-        printf("As cartas são iguais em área!\n");
-    }
+    printf("\nComparação entre %s e %s:\n", nomeCidade1, nomeCidade2);
 
-    // batalha pib
-    if (pib1 > pib2)
+    switch (opcao)
     {
-        pontosCarta1 += 1;
-        printf("A carta 1 venceu!\n");
-    }
-    else if (pib1 < pib2)
-    {
-        pontosCarta2 += 1;
-        printf("A carta 2 venceu!\n");
-    }
-    else
-    {
-        printf("As cartas são iguais em PIB!\n");
-    }
+    case 1: // População
+        printf("População: %lu vs %lu\n", populacao1, populacao2);
+        if (populacao1 > populacao2)
+        {
+            printf("Vencedora: %s\n", nomeCidade1);
+        }
+        else if (populacao2 > populacao1)
+        {
+            printf("Vencedora: %s\n", nomeCidade2);
+        }
+        else
+        {
+            printf("Empate!\n");
+        }
+        break;
 
-    // batalha pontos turisticos
-    if (pontosTuristicos1 > pontosTuristicos2)
-    {
-        pontosCarta1 += 1;
-        printf("A carta 1 venceu!\n");
-    }
-    else if (pontosTuristicos1 < pontosTuristicos2)
-    {
-        pontosCarta2 += 1;
-        printf("A carta 2 venceu!\n");
-    }
-    else
-    {
-        printf("As cartas são iguais em pontos turísticos!\n");
-    }
+    case 2: // Área
+        printf("Área: %.2f km² vs %.2f km²\n", area1, area2);
+        if (area1 > area2)
+        {
+            printf("Vencedora: %s\n", nomeCidade1);
+        }
+        else if (area2 > area1)
+        {
+            printf("Vencedora: %s\n", nomeCidade2);
+        }
+        else
+        {
+            printf("Empate!\n");
+        }
+        break;
 
-    // batalha densidade
-    if (densidade1 > densidade2)
-    {
-        pontosCarta1 += 1;
-        printf("A carta 1 venceu!\n");
-    }
-    else if (densidade1 < densidade2)
-    {
-        pontosCarta2 += 1;
-        printf("A carta 2 venceu!\n");
-    }
-    else
-    {
-        printf("As cartas são iguais em densidade!\n");
-    }
+    case 3: // PIB
+        printf("PIB: %.2f bilhões vs %.2f bilhões\n", pib1, pib2);
+        if (pib1 > pib2)
+        {
+            printf("Vencedora: %s\n", nomeCidade1);
+        }
+        else if (pib2 > pib1)
+        {
+            printf("Vencedora: %s\n", nomeCidade2);
+        }
+        else
+        {
+            printf("Empate!\n");
+        }
+        break;
 
-    // batalha pib per capita
-    if (pibPerCapita1 > pibPerCapita2)
-    {
-        pontosCarta1 += 1;
-        printf("A carta 1 venceu!\n");
-    }
-    else if (pibPerCapita1 < pibPerCapita2)
-    {
-        pontosCarta2 += 1;
-        printf("A carta 2 venceu!\n");
-    }
-    else
-    {
-        printf("As cartas são iguais em PIB per capita!\n");
-    }
+    case 4: // Pontos Turísticos
+        printf("Pontos Turísticos: %d vs %d\n", pontosTuristicos1, pontosTuristicos2);
+        if (pontosTuristicos1 > pontosTuristicos2)
+        {
+            printf("Vencedora: %s\n", nomeCidade1);
+        }
+        else if (pontosTuristicos2 > pontosTuristicos1)
+        {
+            printf("Vencedora: %s\n", nomeCidade2);
+        }
+        else
+        {
+            printf("Empate!\n");
+        }
+        break;
 
-    // batalha super poder
-    if (superPoder1 > superPoder2)
-    {
-        pontosCarta1 += 2;
-        printf("A carta 1 venceu!\n");
-    }
-    else if (superPoder1 < superPoder2)
-    {
-        pontosCarta2 += 2;
-        printf("A carta 2 venceu!\n");
-    }
-    else
-    {
-        printf("As cartas são iguais em super poder!\n");
-    }
+    case 5: // Densidade Demográfica (menor vence!)
+        printf("Densidade Demográfica: %.2f hab/km² vs %.2f hab/km²\n", densidade1, densidade2);
+        if (densidade1 < densidade2)
+        {
+            printf("Vencedora: %s (menor densidade)\n", nomeCidade1);
+        }
+        else if (densidade2 < densidade1)
+        {
+            printf("Vencedora: %s (menor densidade)\n", nomeCidade2);
+        }
+        else
+        {
+            printf("Empate!\n");
+        }
+        break;
 
-    // resultado final
-    printf("\nResultado final:\n");
-    printf("Pontos da carta 1: %d\n", pontosCarta1);
-    printf("Pontos da carta 2: %d\n", pontosCarta2);
-    if (pontosCarta1 > pontosCarta2)
-    {
-        printf("A carta 1 venceu!\n");
-    }
-    else if (pontosCarta1 < pontosCarta2)
-    {
-        printf("A carta 2 venceu!\n");
-    }
-    else
-    {
-        printf("Empate!\n");
+    default:
+        printf("Opção inválida! Por favor, escolha entre 1 e 5.\n");
+        break;
     }
     return 0;
 }
